@@ -6,4 +6,4 @@ A simple Node.js application that implements a members-only website. I built thi
 
 - User registration and login
 - Error handling and validation
-- Non-members see posts as anonymous, while members can view the authors' identities.
+- Non-members see posts as anonymous, while members can view the authors' identities
