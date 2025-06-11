@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Log In</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header>
+    <h1>Members Only</h1>
+  </header>
+
+  <div class="auth-container">
+    <h2>Log In</h2>
+
+    <% if (locals.errors && locals.errors.length > 0) { %>
+      <ul class="error-messages">
+        <% errors.forEach(error => { %>
+          <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <form action="/log-in" method="post">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Log In</button>
+    </form>
+
+    <div class="bottom-link">
+      Don't have an account? <a href="/sign-up">Sign up</a>
+    </div>
+  </div>
+</body>
+</html>

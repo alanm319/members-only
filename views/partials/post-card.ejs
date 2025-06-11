@@ -1,0 +1,22 @@
+<div class="post-card">
+  <div class="post-header">
+    <img class="profile-pic" src="/images/<%= verified ? 'default-profile.jpg' : 'anonymous-profile.jpg' %>" alt="Profile Picture" />
+    <div class="user-info">
+      <% if (verified) { %>
+        <div class="name"><%= post.first_name %> <%= post.last_name %></div>
+        <div class="username">@<%= post.username %></div>
+      <% } else { %>
+        <div class="name">*** ***</div>
+        <div class="username">@*******</div>
+      <% } %>
+    </div>
+    <div class="post-date">
+      <%= new Date(post.created_at).toLocaleDateString() %>
+    </div>
+  </div>
+
+  <div class="post-body">
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+  </div>
+</div>
