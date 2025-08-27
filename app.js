@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('node:path');
-const queries = require('./db/queries');
 const passport = require('passport');
 
 const sessionConfig = require('./config/sessionConfig');
@@ -38,6 +37,20 @@ app.get('/log-out', (req, res, next) => {
       return next(err);
     }
     res.redirect('/');
+  });
+});
+
+app.use((req, res, next) => {
+  res.status(404);
+  res.render('404', { title: 'Page Not Found' });
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
   });
 });
 

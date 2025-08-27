@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Members Only</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+  <header>
+    <h1>Members Only</h1>
+    <div class="user-controls">
+      <% if (locals.user) { %>
+        <span class="username">@<%= user.username %></span>
+        <a class="button" href="/log-out">Log out</a>
+      <% } else { %>
+        <a class="button" href="/log-in">Log in</a>
+        <a class="button" href="/sign-up">Sign up</a>
+      <% } %>
+    </div>
+  </header>
+
+  <main>
+    <h1>404 - Page Not Found</h1>
+    <p>The page you requested could not be found.</p>
+    <a href="/">Go to Home</a>
+  </main>
+
+</body>
+</html>
